@@ -62,33 +62,86 @@ console.log(IT114L.profName);
 // Todo 3.5 Declare and array of objects with information about the courses you are taking this term
 // Your code here
 
-const courses = [ IT114L = {
-    courseCode: "IT114L",
-    name: "Christopher Kyle V. Santos",
-    units: 2,
-    numberOfStudents: 39,
-    profName: "Job Lipat"
+const coursesThisTerm = [
+  {
+      courseCode: "CS120",
+      courseName: "DATA COMMUNICATIONS AND INTRODUCTION TO NETWORKING TECHNOLOGIES",
+      units: 3,
   },
-
-  CS107L = {
-    courseCode: "CS107L",
-    name: "Christopher Kyle V. Santos",
-    units: 2,
-    numberOfStudents: 39,
-    profName: "Sir Adomar Ilao"
+  {
+    courseCode: "CS120L",
+    courseName: "DATA COMMUNICATIONS AND INTRODUCTION TO NETWORKING TECHNOLOGIES",
+    units: 3,
   },
+  {
+    courseCode: "CS120",
+    courseName: "DATA COMMUNICATIONS AND INTRODUCTION TO NETWORKING TECHNOLOGIES",
+    units: 3,
+  },
+  {
+      courseCode: "CS107",
+      courseName: "INFORMATION MANAGEMENT",
+      units: 2,
+  },
+  {
+      courseCode: "CS107L",
+      courseName: "INFORMATION MANAGEMENT (LABORATORY)",
+      units: 1,
+  },
+  {
+      courseCode: "HUM039",
+      courseName: "ETHICS",
+      units: 3,
+  },
+  {
+      courseCode: "IT114",
+      courseName: "WEB SYSTEMS AND TECHNOLOGIES",
+      units: 2,
+  },
+  {
+      courseCode: "IT114L",
+      courseName: "WEB SYSTEMS AND TECHNOLOGIES (LABORATORY)",
+      units: 1,
+  },
+  {
+      courseCode: "IT132",
+      courseName: "LOGIC DESIGN AND SWITCHING THEORY",
+      units: 2,
+  },  
+  {
+      courseCode: "IT133",
+      courseName: "TECHNOPRENEURSHIP",
+      units: 3,
+  }
+];
 
 
-]
 
 // Todo 3.5 Calculate the total number of units you are taking this term using the array of objects.
 // Your code here
+const totalunits = coursesThisTerm.reduce(function(accumulator, course) {return accumulator + course.units;}, 0);
+  
+  console.log("Total units for this term:", totalunits);
 
 // Checkpoint 3.2 What would be the equivalent of objects in python? How would you compare them?
 // Answer: 
+// The equivalent of objects in Python is classes, and you can compare them using identity (is) for checking if they reference the same object or using the equality operator (==) to compare their attributes.
+
 
 // Todo 3.6 Going back to the array of numbers, use the spread syntax to create a copy of the array with an additional number
 // Your code here
+additional_numbers = 69;
+const newNumber = [...numbers, additional_numbers];
+
+console.log(newNumber)
 
 // Todo 3.7 Going back to your IT114L object, extract the course code and units using the spread operator
 // Your code here
+// Extract course code and units using the spread operator
+const { courseCode, units, ...restInfo } = IT114L;
+
+console.log('Course Code:', courseCode);
+console.log('Units:', units);
+
+
+console.log('Remaining Info:', restInfo);
