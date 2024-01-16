@@ -19,6 +19,8 @@ if (randomNumber >= 50) {
 
 // TODO 2.2 Display whether the random number is odd or even
 // Your code here
+const oddOrEven = randomNumber % 2 === 0 ? "even" : "odd";
+console.log(oddOrEven);
 
 
 
@@ -45,9 +47,12 @@ if (randomNumber % 3 ===0 && randomNumber % 5===0) {
     console.log(randomNumber)
 }
 
-let toDisplay = ""
+let toDisplay = randomNumber % 2 === 0 ? "Even" : "Odd";
 // TODO 2.4 Use the ternary conditional operator to set toDisplay to "Even" if randomNumber is even and "Odd" if randomNumber is odd
 // Your code here
+
+console.log(toDisplay);
+
 
 
 
@@ -108,21 +113,33 @@ for (let x in list) {
 // TODO 2.9 Use the for each method of the list to display all its values 
 // Your code here
 
+list.forEach((value) => {
+  console.log(value);
+});
+
+
 // Checkpoint 2.2 When should you use for of, for in, or .forEach loops? Try researching the answer
 // Answer: 
-
-// TODO 2.10 Use the try and catch block to catch division by zero errors in the code below.
-// In the finally block, simulate cleaning up resources by displaying "cleaning up resources"
-
-// const numerator = Math.floor((Math.random() * 100) + 1);
-// const denominator = Math.floor((Math.random() * 5)); // feel free to mock this value for testing
+//for of - You want to iterate over the values of an iterable object, like an array or a string.
+//for in - You want to iterate over the enumerable properties of an object (commonly used with objects, not arrays).
+//for each - You are working specifically with arrays and want a concise way to iterate over each element.
 
 
-// if(denominator === 0){
-//     throw new Error("Division by zero error")
-// } else {
-//     console.log(numerator / denominator);
-// }
+const numerator = Math.floor((Math.random() * 100) + 1);
+const denominator = Math.floor((Math.random() * 5)); // feel free to mock this value for testing
+
+try {
+    if (denominator === 0) {
+        throw new Error("Division by zero error");
+    } else {
+        console.log(numerator / denominator);
+    }
+} catch (error) {
+    console.error(error.message);
+} finally {
+    console.log("Cleaning up resources");
+}
+
 
 
 
